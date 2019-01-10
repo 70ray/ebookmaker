@@ -14,8 +14,6 @@ To process into plain text use:
 
 """
 
-from __future__ import unicode_literals
-
 __docformat__ = 'reStructuredText'
 
 import collections
