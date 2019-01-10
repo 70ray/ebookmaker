@@ -854,7 +854,8 @@ class Writer (writers.HTMLishWriter):
         """ Get a list of all classes that use float or position. """
 
         classes = set ()
-        regex = re.compile (r"\.(\w+)", re.ASCII)
+        #regex = re.compile (r"\.(\w+)", re.ASCII)
+        regex = re.compile (r"\.(\w+)")
 
         for style in xpath (xhtml, "//xhtml:style"):
             p = parsers.CSSParser.Parser ()
