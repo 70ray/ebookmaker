@@ -45,7 +45,7 @@ from ebookmaker.mydocutils.gutenberg.writers import nroff as gutenberg_nroff
 
 mediatypes = (mt.rst, )
 
-REB_EMACS_CHARSET = re.compile (rb'-\*-.*coding:\s*(\S+)',  re.I)
+REB_EMACS_CHARSET = re.compile (br'-\*-.*coding:\s*(\S+)',  re.I)
 
 class Parser (HTMLParser.Parser):
     """ Parse a ReStructured Text
