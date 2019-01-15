@@ -1036,7 +1036,6 @@ class Writer (writers.HTMLishWriter):
 
         url = urllib.parse.unquote (url)
         url = re.sub ('^.*?://', '', url)
-        url = os.path.normpath (url)
         url = url.replace ('/', '@')
         url = re.sub ('[\\|/:?"*<>\u0000-\u001F]', escape, url)
 

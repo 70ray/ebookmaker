@@ -21,6 +21,7 @@ import hashlib
 import logging
 import os.path
 import sys
+import re
 
 import six
 from six.moves import cPickle
@@ -410,6 +411,9 @@ def do_job (job):
         close_log (log_handler)
         log_handler = None
 
+def posix_path(url):
+    url = re.sub('[A-Za-z]:', '', url)
+    return url.replace("\\", "/")
 
 def config ():
     """ Process config files and commandline params. """
@@ -433,7 +437,7 @@ def config ():
     )))
 
     if '://' not in options.url:
-        options.url = os.path.abspath (options.url)
+        options.url = posix_path(os.path.abspath(options.url))
 
 
 def main ():
